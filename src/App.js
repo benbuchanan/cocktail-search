@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import CardList from './CardList';
+import SearchBox from './SearchBox';
+import { drinks } from './drinks';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+    constructor() {
+        super();
+        this.state = {
+            drinks: drinks,
+            searchfield: ''
+        };
+    }
+
+    render() {
+        const filteredDrinks = this.state.drinks.filter(drink => {
+            return drink.strDrink
+                .toLowerCase()
+                .includes(this.state.searchfield.toLowerCase());
+        });
+        return (
+            <div className='App tc'>
+                <h1 className='washed-yellow'>Cocktail Search</h1>
+                <SearchBox searchChange={this.onSearchChange} placeholder='Search by Name'/>
+                {/* FOR INGREDIENT SEARCH <SearchBox searchChange={this.onSearchCHange}/> */}
+                <CardList drinks={filteredDrinks}/>
+            </div>
+        );
+    }
+
+    onSearchChange = event => {
+        this.setState({searchfield: event.target.value});
+    };
 }
 
 export default App;
