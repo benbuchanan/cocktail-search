@@ -1,7 +1,7 @@
 import React from 'react';
-import './Card.css';
+import './CardFront.css';
 
-function Card( { name, alcoholic, imgSrc } ) {
+function CardFront( { name, alcoholic, imgSrc } ) {
     return (
         <div className='tc bg-washed-yellow dib br3 ma3 pa4'>
             <img className='image br3' alt={name} src={imgSrc} />
@@ -11,4 +11,4 @@ function Card( { name, alcoholic, imgSrc } ) {
     );
 }
 
-export default Card;
+export default CardFront;

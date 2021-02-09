@@ -1,12 +1,12 @@
 import React from 'react';
-import Card from './Card';
+import CardFront from './CardFront';
 
 const CardList = ({ drinks }) => {
     return (
         <div>
             {drinks.map((user, i) => {
                 return (
-                    <Card
+                    <CardFront
                         key={i}
                         name={drinks[i].strDrink}
                         alcoholic={drinks[i].strAlcoholic}
