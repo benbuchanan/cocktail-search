@@ -25,7 +25,7 @@ function Back({ name, cardclick, ingredients, measures, instructions }) {
 
     return (
         <div
-            className='flipper bg-washed-yellow br3 ma3 pa4'
+            className='flipper bg-washed-yellow br3 ma3 pa4 pointer'
             onClick={cardclick}
         >
             <h2 className='drink-name tc'>{name}</h2>

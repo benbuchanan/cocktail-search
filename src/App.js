@@ -20,14 +20,20 @@ class App extends Component {
                 .includes(this.state.searchfield.toLowerCase());
         });
         return (
-            <div className='App tc'>
-                <h1>Cocktail Search</h1>
-                <SearchBox
-                    searchChange={this.onSearchChange}
-                    placeholder='Search by Name'
-                />
-                {/* FOR INGREDIENT SEARCH <SearchBox searchChange={this.onSearchCHange}/> */}
-                <CardList drinks={filteredDrinks} />
+            <div className='wrapper'>
+                <div className='App tc'>
+                    <h1>Cocktail Search</h1>
+                    <SearchBox
+                        searchChange={this.onSearchChange}
+                        placeholder='Search by Name'
+                    />
+                    {/* FOR INGREDIENT SEARCH <SearchBox searchChange={this.onSearchCHange}/> */}
+                    <CardList drinks={filteredDrinks} />
+                </div>
+
+                <footer className='footer tr mr5'>
+                    Created by Ben Buchanan
+                </footer>
             </div>
         );
     }
