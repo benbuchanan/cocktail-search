@@ -9,28 +9,31 @@ class App extends Component {
         super();
         this.state = {
             drinks: drinks,
-            searchfield: ''
+            searchfield: '',
         };
     }
 
     render() {
-        const filteredDrinks = this.state.drinks.filter(drink => {
+        const filteredDrinks = this.state.drinks.filter((drink) => {
             return drink.strDrink
                 .toLowerCase()
                 .includes(this.state.searchfield.toLowerCase());
         });
         return (
             <div className='App tc'>
-                <h1 className='washed-yellow'>Cocktail Search</h1>
-                <SearchBox searchChange={this.onSearchChange} placeholder='Search by Name'/>
+                <h1>Cocktail Search</h1>
+                <SearchBox
+                    searchChange={this.onSearchChange}
+                    placeholder='Search by Name'
+                />
                 {/* FOR INGREDIENT SEARCH <SearchBox searchChange={this.onSearchCHange}/> */}
-                <CardList drinks={filteredDrinks}/>
+                <CardList drinks={filteredDrinks} />
             </div>
         );
     }
 
-    onSearchChange = event => {
-        this.setState({searchfield: event.target.value});
+    onSearchChange = (event) => {
+        this.setState({ searchfield: event.target.value });
     };
 }
 
