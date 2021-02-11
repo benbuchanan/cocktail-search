@@ -23,11 +23,16 @@ class App extends Component {
             <div className='wrapper'>
                 <div className='App tc'>
                     <h1>Cocktail Search</h1>
-                    <SearchBox
-                        searchChange={this.onSearchChange}
-                        placeholder='Search by Name'
-                    />
-                    {/* FOR INGREDIENT SEARCH <SearchBox searchChange={this.onSearchCHange}/> */}
+                    <div className='search-wrapper flex justify-center'>
+                        <SearchBox
+                            searchChange={this.onSearchChange}
+                            placeholder='Search by Name'
+                        />
+                        <SearchBox
+                            searchChange={this.onSearchCHange}
+                            placeholder='Search by Ingredient'
+                        />
+                    </div>
                     <CardList drinks={filteredDrinks} />
                 </div>
 

@@ -4,11 +4,11 @@ import './Card.css';
 function Card({ name, imgSrc, cardclick }) {
     return (
         <div
-            className='flipper tc bg-washed-yellow br3 ma3 pa4 pointer'
+            className='flipper tc bg-washed-yellow br3 ma3 pa3 pointer'
             onClick={cardclick}
         >
-            <img className='image br3' alt={name} src={imgSrc} />
             <h2 className='drink-name'>{name}</h2>
+            <img className='image br3' alt={name} src={imgSrc} />
         </div>
     );
 }

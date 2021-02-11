@@ -1,5 +1,14 @@
+@font-face {
+    font-family: 'Open-Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open_Sans/OpenSans-Regular.ttf'),
+        url('Open_Sans/OpenSans-Regular.ttf') format('truetype');
+}
+
 .App {
     text-align: center;
+    font-family: 'Open-Sans';
 }
 
 .wrapper {
@@ -9,4 +18,8 @@
 
 .footer {
     height: 30px;
+}
+
+.search-wrapper {
+    margin-bottom: 15px;
 }
